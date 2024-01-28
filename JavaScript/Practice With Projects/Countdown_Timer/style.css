@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,700&display=swap");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Serif Pro', serif;
+}
+
+div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#00c3ff, #ffff1c);
+}
+
+p {
+    height: 100px;
+    width: 600px;
+    background-image: linear-gradient(#16bffd, #cb3066);
+    color: white;
+    line-height: 100px;
+    text-align: center;
+    font-size: 60px;
+    box-shadow: 1px 1px 0px #000,
+        2px 2px 0px #000,
+        3px 3px 0px #000,
+        4px 4px 0px #000,
+        5px 5px 0px #000,
+        6px 6px 0px #000;
+}
