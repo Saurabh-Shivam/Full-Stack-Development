@@ -1,0 +1,277 @@
+:root {
+  --bg: #f6f8ff;
+  --bg-content: #fefefe;
+  --text: #4b6a9b;
+  --text-alt: #2b3442;
+  --shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  --shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+  --icon-bg: brightness(100%);
+  /* Btn */
+  --btn: #0079ff;
+  --btn-hover: #60abff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+.mainContainer {
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+/* head section */
+.headContianer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 550px;
+  margin: 1rem;
+  margin-bottom: 2.3rem;
+  padding: 8px;
+}
+
+.headContianer h1 {
+  color: var(--text);
+  font-size: 26px;
+}
+
+.mode-container {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.mode-container i {
+  color: #697c9a;
+  scale: 1.1;
+  font-size: 18px;
+}
+
+/* search section */
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 6px;
+  width: 550px;
+  height: 60px;
+  margin-top: -14px;
+  background-color: var(--bg-content);
+  box-shadow: var(--shadow);
+  padding-left: 20px;
+  /* for search icon image */
+  background-image: url(./Images/search-icon.svg);
+  background-repeat: no-repeat;
+  background-position-x: 24px;
+  background-position-y: center;
+  background-size: 20px;
+  /* bcz we have to change the position of noResultsElem manually */
+  position: relative;
+}
+
+#search {
+  width: 320px;
+  border: none;
+  outline: none;
+  /* margin-left: -50px; */
+  /* bcz we have to change the position of search icon manually */
+  position: relative;
+  left: 35px;
+  background-color: var(--bg-content);
+  color: var(--text);
+}
+
+#search::placeholder {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* .inputContainer i {
+  position: absolute;
+  top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a86ff;
+  font-size: 18px;
+} */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  height: 40px;
+  padding: 16px 20px;
+  width: 80px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--btn);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+
+#noResultsElem {
+  font-size: 14px;
+  position: absolute;
+  right: -50px;
+  top: -33px;
+  /* transform: translate(25rem, -2.4rem); */
+  text-transform: capitalize;
+  background-color: red;
+  border-radius: 10px;
+  width: 180px;
+  padding: 4px 6px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.5s;
+  scale: 0;
+}
+
+/* card section */
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+  width: 550px;
+  /* max-width: max-content; */
+  height: 380px;
+  margin-top: 2rem;
+  background-color: var(--bg-content);
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 20px;
+}
+
+.userImg {
+  display: flex;
+  gap: 12px;
+}
+
+.userImg img {
+  width: 90px;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  gap: 70px;
+}
+
+[data-date] {
+  font-size: 12px;
+  padding: 10px 2px;
+  color: var(--text);
+}
+
+.username {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max-content;
+}
+
+.username h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-alt);
+}
+
+.username a {
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--btn);
+}
+
+.bioSection {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 30px 12px;
+  opacity: 0.75;
+  line-height: 25px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.followerSection {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg);
+  padding: 18px 28px;
+  border-radius: 10px;
+}
+
+.followInfo p {
+  font-size: 11px;
+  color: var(--text);
+}
+
+.followInfo a {
+  text-decoration: none;
+  color: var(--text-alt);
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialSection {
+  margin: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 14px 60px;
+  gap: 5px 80px;
+}
+
+.profileInfo {
+  display: flex;
+  width: 200px;
+}
+
+.bottomIcon {
+  width: 20px;
+  filter: var(--icon-bg);
+}
+
+.profileInfo a {
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 10px;
+  color: var(--text-alt);
+}
+
+.profileInfo p {
+  font-size: 14px;
+  margin-left: 10px;
+  color: var(--text-alt);
+}

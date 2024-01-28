@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Home - CodeHelp</title>
+  </head>
+  <body>
+    <div class="main">
+      <!-- Feedback Button -->
+      <div class="feedbackBtn">
+        <button class="issueBtn">🤔 Facing an issue?</button>
+      </div>
+
+      <!-- Navbar -->
+      <div class="navbarContainer">
+        <!-- Top Notification Bar -->
+        <div class="notificationBar">
+          <p class="notifiText">
+            Hurry Up !!<span> 1st </span> Lecture of <span> SUPRA </span> Batch
+            starts in <span> 12 days</span>
+          </p>
+          <button onclick="handleHide()" class="cross">
+            <i class="fa-solid fa-x"></i>
+          </button>
+        </div>
+
+        <div class="navBar">
+          <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="logo" /></a>
+            <a href="index.html">
+              <h2 class="logoName">Code <span>Help</span></h2>
+            </a>
+          </div>
+
+          <div class="navItems">
+            <li><a href="about.html">about us</a></li>
+            <li><a href="#courses">courses</a></li>
+            <li id="labTag">
+              <a
+                target="_blank"
+                href="https://labs.thecodehelp.in/quick-compiler"
+                >labs <i class="fa-solid fa-angle-down"></i>
+              </a>
+            </li>
+            <li><a href="contact.html">contact</a></li>
+          </div>
+
+          <div class="navAllBtns">
+            <button
+              onclick="window.open('https://learn.thecodehelp.in/s/dashboard', '_blank')"
+              class="btn whiteBtn"
+            >
+              Dashboard
+            </button>
+            <button
+              onclick="window.open('https://learn.thecodehelp.in/s/dashboard', '_blank')"
+              class="btn blueBtn"
+            >
+              Login <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+            <i class="modeBtn fa-solid fa-moon"></i>
+          </div>
+        </div>
+        <!--  Navbar Hover Div  -->
+        <div class="mainLabContainer">
+          <div class="labContainer">
+            <a target="_blank" href="https://labs.thecodehelp.in/quick-compiler">
+              <div class="labPart1">
+                <div class="labHead">
+                  <h2>Fruitbox Flex</h2>
+                  <h4>Popular</h4>
+                </div>
+                <div class="labText">
+                  <p>
+                    A fun and interactive way to sharpen your Flexbox CSS
+                    skills.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="https://labs.thecodehelp.in/fruitbox-flex">
+              <div class="labPart2">
+                <div class="labHead">
+                  <h2>Quick Compiler</h2>
+                  <h4>Beta</h4>
+                </div>
+                <div class="labText">
+                  <p>Write and run code in multiple languages from anywhere.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="heroContainer">
+        <div class="heroLeft">
+          <div class="heroIntro">
+            <div class="heroHead">
+              <h1><span>learn</span> with <span class="heroName"></span></h1>
+            </div>
+            <div class="heroDesc">
+              <h2>the ulimate guide to ace <br />SDE interviews.</h2>
+            </div>
+          </div>
+
+          <div class="heroAllBtns">
+            <button
+              onclick="window.open('#courses', '_self')"
+              class="btn blueBtn"
+            >
+              view courses
+            </button>
+            <button
+              onclick="window.open('https://www.youtube.com/@CodeHelp/videos', '_blank')"
+              class="btn whiteBtn"
+            >
+              watch videos
+            </button>
+          </div>
+
+          <div class="heroReview">
+            <div class="studImgs">
+              <img class="revImg" src="assets/reviewer1.png" alt="image" />
+              <img class="revImg" src="assets/reviewer2.png" alt="image" />
+              <img class="revImg" src="assets/reviewer3.png" alt="image" />
+              <img class="revImg" src="assets/reviewer4.png" alt="image" />
+              <img class="revImg" src="assets/reviewer5.png" alt="image" />
+            </div>
+
+            <div class="studReview">
+              <h3>35000+</h3>
+              <h3>happy students</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroRight">
+          <div class="backImg"><img src="assets/boy_girl.png" alt="" /></div>
+          <div class="comp compImg1">
+            <img src="assets/laptop1.png" alt="" />
+          </div>
+          <div class="comp compImg2">
+            <img src="assets/laptop2.png" alt="" />
+          </div>
+          <div class="comp compImg3">
+            <img src="assets/laptop3.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement Section -->
+      <div class="achievementContainer">
+        <div class="followerSec">
+          <h1>900K+</h1>
+          <h3 class="socialName">
+            Subscribers <br />
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UCldyi11QYNXYXiLjVbyw5dA"
+              >on Youtube</a
+            >
+          </h3>
+        </div>
+
+        <div class="followerSec">
+          <h1>4K+</h1>
+          <h3 class="socialName">
+            Subscribers <br />
+            <a target="_blank" href="https://twitter.com/lovebabbar3"
+              >on Twitter</a
+            >
+          </h3>
+        </div>
+
+        <div class="followerSec">
+          <h1>100K+</h1>
+          <h3 class="socialName">
+            Subscribers <br />
+            <a target="_blank" href="https://www.instagram.com/lovebabbar1/"
+              >on Instagram</a
+            >
+          </h3>
+        </div>
+
+        <div class="followerSec">
+          <h1>410K+</h1>
+          <h3 class="socialName">
+            Subscribers <br />
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/love-babbar-38ab2887/"
+              >on Linkedin</a
+            >
+          </h3>
+        </div>
+      </div>
+
+      <!-- Reason Section -->
+      <div class="reasonContainer">
+        <div class="reasonText">
+          <h3>why code-help?</h3>
+          <h1>Making learning easier and more convenient for you.</h1>
+        </div>
+
+        <div class="reasonCardContainer">
+          <div class="card reasonCard">
+            <div class="reasonImg">
+              <img
+                style="
+                  background-color: #9cdbd3;
+                  height: 70px;
+                  width: 70px;
+                  border-radius: 100%;
+                "
+                src="assets/img1.png"
+                alt=""
+              />
+            </div>
+            <div class="reasonHead"><h2>data structure</h2></div>
+            <div class="reasonPara">
+              <p>
+                Data structures are the problem-solving pillars of coding. Learn
+                all the foundational knowledge about all of the popular data
+                structure that you need, to be well-versed in interviews.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reasonCard">
+            <div class="reasonImg">
+              <img
+                style="
+                  background-color: #f5b2b7;
+                  height: 70px;
+                  width: 70px;
+                  border-radius: 100%;
+                "
+                src="assets/img2.png"
+                alt=""
+              />
+            </div>
+            <div class="reasonHead"><h2>placement preparation</h2></div>
+            <div class="reasonPara">
+              <p>
+                Ace the placement interviews by being knowledgeable in all
+                well-known data structures, popular problem-solving methods, and
+                core computer sciences.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reasonCard">
+            <div class="reasonImg">
+              <img
+                style="
+                  background-color: #b1a3fe;
+                  height: 70px;
+                  width: 70px;
+                  border-radius: 100%;
+                "
+                src="assets/img3.png"
+                alt=""
+              />
+            </div>
+            <div class="reasonHead"><h2>hand picked question</h2></div>
+            <div class="reasonPara">
+              <p>
+                Get access to hand-picked coding interview questions across
+                categories & difficulty levels that will prepare you for every
+                interview you would encounter.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reasonCard">
+            <div class="reasonImg">
+              <img
+                style="
+                  background-color: #a3cbe0;
+                  height: 55px;
+                  width: 60px;
+                  border-radius: 100%;
+                "
+                src="assets/img4.png"
+                alt=""
+              />
+            </div>
+            <div class="reasonHead"><h2>curated content</h2></div>
+            <div class="reasonPara">
+              <p>
+                Learn in-depth conceptual overviews, how to approach an
+                algorithm, how to implement it & how to optimize it.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reasonCard">
+            <div class="reasonImg">
+              <img
+                style="
+                  background-color: #a6d9fe;
+                  height: 70px;
+                  width: 70px;
+                  border-radius: 100%;
+                "
+                src="assets/img5.png"
+                alt=""
+              />
+            </div>
+            <div class="reasonHead"><h2>learn from the best</h2></div>
+            <div class="reasonPara">
+              <p>
+                Get access to lectures and get mentored by one of the best in
+                the market, Love Babbar.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reasonCard">
+            <div class="reasonImg">
+              <img
+                style="
+                  background-color: #fdc8a4;
+                  height: 70px;
+                  width: 70px;
+                  border-radius: 100%;
+                "
+                src="assets/img6.png"
+                alt=""
+              />
+            </div>
+            <div class="reasonHead"><h2>learn something new</h2></div>
+            <div class="reasonPara">
+              <p>
+                Learn new concepts daily, increase your productivity & reach
+                your full potential.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instrtuctor Details -->
+      <div class="detailContainer">
+        <div class="detailHead">
+          <div class="headText">Meet your <span>Instructor</span></div>
+          <div class="btn blueBtn">Know more</div>
+        </div>
+
+        <div class="instructor">
+          <div class="instImg">
+            <img src="assets/babbarBhaiya.jfif" alt="" />
+          </div>
+          <div class="instName">Love Babbar</div>
+          <div class="instPost">Founder, CodeHelp</div>
+        </div>
+
+        <div class="instWorks">
+          <div class="works">
+            <img style="width: 100px" src="assets/amazon.png" alt="" />
+            <h3>Ex-Amazon, SWE</h3>
+          </div>
+          <div class="works">
+            <img style="width: 120px" src="assets/microsoft.png" alt="" />
+            <h3>Ex-Mircosoft, SWE</h3>
+          </div>
+          <div class="works">
+            <img style="width: 100px" src="assets/google.png" alt="" />
+            <h3>Google ASC, India</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placement Stats Section -->
+      <div class="statsContainer">
+        <div class="statsLeft">
+          <span>PLACEMENTS</span>
+          <h2>get offer from top companies</h2>
+          <h3>Our finest get offers from top-notch companies.</h3>
+        </div>
+
+        <div class="statsRight">
+          <div class="mainWhite">
+            <div class="purple">
+              <div class="innerWhite">
+                <div class="compIcons comp1">
+                  <img
+                    style="width: 30px; border-radius: 100%"
+                    src="assets/comp1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp2">
+                  <img
+                    style="width: 40px; border-radius: 100%"
+                    src="assets/comp2.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp3">
+                  <img
+                    style="width: 30px; border-radius: 100%"
+                    src="assets/comp3.png"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp4">
+                  <img
+                    style="width: 30px; border-radius: 100%"
+                    src="assets/comp4.png"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp5">
+                  <img
+                    style="width: 40px; border-radius: 100%"
+                    src="assets/comp5.png"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp6">
+                  <img
+                    style="width: 40px; border-radius: 100%"
+                    src="assets/comp6.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp7">
+                  <img
+                    style="width: 30px; border-radius: 100%; height: 30px"
+                    src="assets/comp7.png"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp8">
+                  <img
+                    style="width: 40px; border-radius: 100%"
+                    src="assets/comp8.png"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp9">
+                  <img
+                    style="width: 40px; border-radius: 100%"
+                    src="assets/comp9.png"
+                    alt=""
+                  />
+                </div>
+                <div class="compIcons comp10">
+                  <img
+                    style="width: 30px; border-radius: 100%"
+                    src="assets/comp10.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Section -->
+      <div class="courseContainer" id="courses">
+        <div class="container1">
+          <div class="courseHead">
+            <h1>What would you like to <span>learn?</span></h1>
+          </div>
+          <div class="courseCard">
+            <div class="card batchCard">
+              <div class="batchImg">
+                <img style="width: 350px" src="assets/course1.jpg" alt="" />
+              </div>
+              <div class="batchName">
+                low level design bootCamp @SUPRA batch
+              </div>
+              <div class="priceArea">
+                <div class="coursePrice">₹2700</div>
+                <div class="mainPrice">₹4800</div>
+                <div class="discount">43% off</div>
+              </div>
+            </div>
+            <div class="card batchCard">
+              <div class="batchImg">
+                <img style="width: 350px" src="assets/course2.jpg" alt="" />
+              </div>
+              <div class="batchName">
+                data structures & algorithms bootCamp @Supreme-2.0
+              </div>
+              <div class="priceArea">
+                <div class="coursePrice">₹3600</div>
+                <div class="mainPrice">₹7000</div>
+                <div class="discount">50% off</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container1">
+          <dv class="courseHead"
+            ><h1>Recorded <span>Courses</span></h1></dv
+          >
+
+          <div class="courseCard">
+            <div class="card batchCard">
+              <div class="batchImg">
+                <img style="width: 350px" src="assets/course3.jpg" alt="" />
+              </div>
+              <div class="batchName">
+                data structures & algorithms bootCamp @Supreme
+              </div>
+              <div class="priceArea">
+                <div class="coursePrice">₹3500</div>
+                <div class="mainPrice">₹7000</div>
+                <div class="discount">50% off</div>
+              </div>
+            </div>
+
+            <div class="card batchCard">
+              <div class="batchImg">
+                <img style="width: 350px" src="assets/course4.jpg" alt="" />
+              </div>
+              <div class="batchName">
+                web development master course @dot batch
+              </div>
+              <div class="priceArea">
+                <div class="coursePrice">₹4500</div>
+                <div class="mainPrice">₹6999</div>
+                <div class="discount">42% off</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Section -->
+      <div class="testimonialContainer">
+        <div class="testiHead">
+          <div class="txtPart">
+            <h2>what student says</h2>
+            <h1>recent reviews</h1>
+          </div>
+          <div class="btnPart">
+            <i class="fa-solid arrowBtn leftBtn btn whiteBtn fa-arrow-left"></i>
+            <i
+              class="fa-solid arrowBtn rightBtn btn blueBtn fa-arrow-right"
+            ></i>
+          </div>
+        </div>
+
+        <div class="testiCardContainer">
+          <div class="card testiCard">
+            <div class="courseCardReview">
+              <p>
+                Excellent course on data structures and algorithms. Instructor
+                was knowledgeable and clear. Assignments and project were useful
+                and fun. Learned a lot and enjoyed it.
+              </p>
+            </div>
+            <div class="info_star">
+              <div class="reviwerInfo">
+                <div class="reviewerImg">
+                  <img class="revImg" src="assets/reviewer1.png" alt="" />
+                </div>
+                <div class="reviewerName">
+                  <h4>Swastik Vasistha</h4>
+                  <h5>DSA Batch</h5>
+                </div>
+              </div>
+              <div class="ratings">
+                <!-- stars -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="card testiCard">
+            <div class="courseCardReview">
+              <p>
+                Great course on data structures and algorithms. Clear
+                explanations, examples, and exercises. Challenging assignments
+                and project. Learned a lot and had fun.
+              </p>
+            </div>
+            <div class="info_star">
+              <div class="reviwerInfo">
+                <div class="reviewerImg">
+                  <img class="revImg" src="assets/reviewer2.png" alt="" />
+                </div>
+                <div class="reviewerName">
+                  <h4>Akhil Sharma</h4>
+                  <h5>DSA Course</h5>
+                </div>
+              </div>
+              <div class="ratings">
+                <!-- stars -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  id="star"
+                >
+                  <path
+                    fill="none"
+                    stroke="#ff9e2a"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M10.2135354,0.441329894 L12.5301907,5.09668871 C12.6437709,5.3306716 12.8673229,5.49423715 13.1274534,5.53368599 L18.3127795,6.28282419 C18.5232013,6.31151358 18.713271,6.4218659 18.8407265,6.58934431 C18.9681821,6.75682272 19.0224584,6.9675444 18.9914871,7.17465538 C18.9654336,7.34490401 18.8826605,7.50177662 18.7562018,7.62057098 L15.0006864,11.2592422 C14.8108765,11.4385657 14.7257803,11.7002187 14.7744505,11.9548706 L15.679394,17.0828999 C15.7448774,17.5054355 15.4552147,17.9019154 15.0278347,17.9747311 C14.8516089,18.001936 14.6711642,17.9738576 14.5120169,17.8944663 L9.88775575,15.4776038 C9.65675721,15.3522485 9.37670064,15.3522485 9.1457021,15.4776038 L4.49429266,17.9123029 C4.1040442,18.1096521 3.62530757,17.962958 3.41740993,17.5823254 C3.33635184,17.4288523 3.30778438,17.2536748 3.33596502,17.0828999 L4.24090849,11.9548706 C4.28467865,11.7005405 4.20030563,11.441111 4.01467262,11.2592422 L0.23200891,7.62057098 C-0.0773363034,7.31150312 -0.0773363034,6.81484985 0.23200891,6.50578199 C0.358259148,6.3905834 0.515216648,6.31324177 0.684480646,6.28282419 L5.86980673,5.53368599 C6.12870837,5.49136141 6.35105151,5.32868032 6.46706943,5.09668871 L8.78372471,0.441329894 C8.87526213,0.25256864 9.04026912,0.108236628 9.24131794,0.0410719808 C9.44236677,-0.0260926667 9.66241783,-0.0103975019 9.85155801,0.0845974179 C10.0076083,0.16259069 10.1343954,0.287540724 10.2135354,0.441329894 Z"
+                    transform="translate(2.5 3)"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="card testiCard">
+            <div class="courseCardReview">
+              <p>
+                A very practical course on web development. Learned how to
+                create dynamic and responsive websites using HTML, CSS, and
+                JavaScript. Instructor was experienced and helpful. Assignments
+                and project were fun and useful.
+              </p>
+            </div>
+            <div class="info_star">
+              <div class="reviwerInfo">
+                <div class="reviewerImg">
+                  <img class="revImg" src="assets/reviewer4.png" alt="" />
+                </div>
+                <div class="reviewerName">
+                  <h4>Bhoomi Vaswani</h4>
+                  <h5>Web Development Batch</h5>
+                </div>
+              </div>
+              <div class="ratings">
+                <!-- stars -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  id="star"
+                >
+                  <path
+                    style="marker: none"
+                    fill="#f8b84e"
+                    d="M-1220 1212.362c-11.656 8.326-86.446-44.452-100.77-44.568-14.324-.115-89.956 51.449-101.476 42.936-11.52-8.513 15.563-95.952 11.247-109.61-4.316-13.658-76.729-69.655-72.193-83.242 4.537-13.587 96.065-14.849 107.721-23.175 11.656-8.325 42.535-94.497 56.86-94.382 14.323.116 43.807 86.775 55.327 95.288 11.52 8.512 103.017 11.252 107.334 24.91 4.316 13.658-68.99 68.479-73.527 82.066-4.536 13.587 21.133 101.451 9.477 109.777z"
+                    color="#000"
+                    overflow="visible"
+                    transform="matrix(.04574 0 0 .04561 68.85 -40.34)"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Section -->
+      <div class="communityContainer">
+        <div class="communityHead">
+          <h1>Join our Coding family</h1>
+          <h3>
+            If you would like to keep up on the latest posts and courses, come
+            by and connect with us on the following links.
+          </h3>
+        </div>
+
+        <div class="socialLinksContainer">
+          <div class="linkContainer">
+            <div class="linkImg"><img src="assets/youtube.png" alt="" /></div>
+            <div class="linkName" style="color: #ff0000">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <h4>YouTube</h4>
+            </div>
+          </div>
+          <div class="linkContainer">
+            <div class="linkImg"><img src="assets/linkedin.png" alt="" /></div>
+            <div class="linkName" style="color: #0077b5">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <h4>LinkedIn</h4>
+            </div>
+          </div>
+          <div class="linkContainer">
+            <div class="linkImg"><img src="assets/discord.png" alt="" /></div>
+            <div class="linkName" style="color: #5865f2">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <h4>Discord</h4>
+            </div>
+          </div>
+          <div class="linkContainer">
+            <div class="linkImg"><img src="assets/telegram.png" alt="" /></div>
+            <div class="linkName" style="color: #229ed9">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <h4>Telegram</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footerContainer">
+        <div class="footerContent">
+          <div class="fleft">
+            <div class="fleftImg">
+              <a href=""><img src="assets/logo.png" alt="" /></a>
+            </div>
+            <div class="fleftTxt">
+              <h2>code help</h2>
+              <p>the ulimate guide to ace SDE interviews.</p>
+            </div>
+          </div>
+
+          <div class="fmiddle">
+            <div class="fItems fIt1">
+              <h4>menu</h4>
+              <li><a href="about.html">about us</a></li>
+              <li><a href="#courses">courses</a></li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://labs.thecodehelp.in/quick-compiler"
+                  >labs</a
+                >
+              </li>
+              <li><a href="contact.html">contact</a></li>
+            </div>
+            <div class="fItems fIt2">
+              <h4>services</h4>
+              <li>Privacy Policy</li>
+              <li>Terms of use</li>
+              <li>Refund & Cancellation policy</li>
+            </div>
+          </div>
+
+          <div class="fRight">
+            <h3>get in touch</h3>
+            <p>Email: support@codehelp.in</p>
+          </div>
+        </div>
+
+        <div class="copyrightPart">
+          <p>
+            Copyright © 2024 Sortring Code Help Technologies Pvt Ltd. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/f1edbde1f7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script src="index.js"></script>
+
+    <script>
+      let typed = new Typed(".heroName", {
+        strings: ["love", "babbar"],
+        typeSpeed: 80,
+        backSpeed: 100,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
