@@ -1,5 +1,5 @@
 {
-  "name": "props1",
+  "name": "usestate-counter-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
