@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "./Counter.css";
 
-const Counter = () => {
+function App() {
   const [count, setCount] = useState(0);
 
   function resetHandler() {
@@ -42,6 +41,6 @@ const Counter = () => {
       </div>
     </>
   );
-};
+}
 
-export default Counter;
+export default App;
