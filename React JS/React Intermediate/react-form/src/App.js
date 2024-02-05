@@ -135,7 +135,7 @@ function App() {
           onChange={changeHandler}
         >
           <option value="scarpio">Scarpio</option>
-          <option value="russian">Legender</option>
+          <option value="legender">Legender</option>
           <option value="thar">Thar</option>
           <option value="bmw">BMW</option>
           <option value="other" selected>
