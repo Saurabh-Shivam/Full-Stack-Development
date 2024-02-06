@@ -22,14 +22,11 @@ const SignupForm = (props) => {
   });
 
   function changeHandler(event) {
-    setFormData([
-      (prev) => [
-        {
-          ...prev,
-          [event.target.name]: event.target.value,
-        },
-      ],
-    ]);
+    const { name, value } = event.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   }
 
   function submitHandler(e) {
@@ -44,7 +41,12 @@ const SignupForm = (props) => {
     const accountData = {
       ...formData,
     };
-    console.log(accountData);
+
+    const finalAccountData = {
+      ...accountData,
+      accountType,
+    };
+    console.log(finalAccountData);
 
     navigate("/dashboard");
   }
@@ -53,7 +55,7 @@ const SignupForm = (props) => {
     <div>
       <div className="flex bg-richblack-800 p-1 gap-x-1 rounded-full max-w-max">
         <button
-          onclick={() => setAccountType("student")}
+          onClick={() => setAccountType("student")}
           className={`${
             accountType === "student"
               ? "bg-richblack-900 text-richblack-5"
@@ -63,7 +65,7 @@ const SignupForm = (props) => {
           Student
         </button>
         <button
-          onclick={() => setAccountType("instructor")}
+          onClick={() => setAccountType("instructor")}
           className={`${
             accountType === "instructor"
               ? "bg-richblack-900 text-richblack-5"
@@ -138,11 +140,11 @@ const SignupForm = (props) => {
               onChange={changeHandler}
               value={formData.password}
               name="password"
-              className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richblack-5"
+              className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] pl-[40px] text-richblack-5"
             />
             <span
               onClick={() => setShowCreatePass(!showCreatePass)}
-              className="absolute right-3 top-[38px] cursor-pointer z-10"
+              className="absolute top-[80%] transform -translate-y-1/2 cursor-pointer"
             >
               {showCreatePass ? (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -152,7 +154,7 @@ const SignupForm = (props) => {
             </span>
           </label>
 
-          <label htmlFor="" className="w-full relative">
+          <label htmlFor="w-full relative" className="w-full relative">
             <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
               Confirm Password
               <sup className="text-pink-200">*</sup>
@@ -165,12 +167,12 @@ const SignupForm = (props) => {
               onChange={changeHandler}
               value={formData.confirmPassword}
               name="confirmPassword"
-              className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richblack-5"
+              className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] pl-[40px] text-richblack-5"
             />
 
             <span
               onClick={() => setShowConfirmPass(!showConfirmPass)}
-              className="absolute right-3 top-[38px] cursor-pointer z-10"
+              className="absolute top-[50%] right-3 transform -translate-y-1/2 cursor-pointer"
             >
               {showConfirmPass ? (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
