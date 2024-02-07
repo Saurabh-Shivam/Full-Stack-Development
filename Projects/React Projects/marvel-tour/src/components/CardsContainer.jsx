@@ -16,14 +16,22 @@ const CardsContainer = ({ cardValue }) => {
   // let image = `${cardValue[1]?.thumbnail?.path}.${cardValue[1]?.thumbnail?.extension}`;
   // let comicLink = cardValue[1]?.urls[1]?.url;
   // console.log(image);
+
+  // Shuffle the cardValue array randomly
+  const shuffledCards = cardValue.sort(() => Math.random() - 0.5);
+  // Slice the first 4 items from the shuffled array
+  const randomCards = shuffledCards.slice(0, 4);
+
   return (
     <div>
-      {cardValue.map((card, index) => (
+      {randomCards.map((card, index) => (
         <Card
           key={index}
           name={card.name}
           id={card.id}
-          desc={card.description}
+          desc={
+            card.description ? card.description : "No description available"
+          }
           comics={card.comics.available}
           events={card.events.available}
           stories={card.stories.available}
