@@ -27,17 +27,17 @@ const CardsContainer = ({ cardValue }) => {
       {randomCards.map((card, index) => (
         <Card
           key={index}
-          name={card.name}
-          id={card.id}
+          name={card?.name}
+          id={card?.id}
           desc={
-            card.description ? card.description : "No description available"
+            card?.description ? card?.description : "No description available"
           }
-          comics={card.comics.available}
-          events={card.events.available}
-          stories={card.stories.available}
-          series={card.series.available}
-          image={`${card.thumbnail.path}.${card.thumbnail.extension}`}
-          comicLink={card.urls.find((url) => url.type === "comiclink").url}
+          comics={card?.comics?.available}
+          events={card?.events?.available}
+          stories={card?.stories?.available}
+          series={card?.series?.available}
+          image={`${card?.thumbnail?.path}.${card?.thumbnail?.extension}`}
+          comicLink={card?.urls.find((url) => url.type === "comiclink")?.url}
         />
       ))}
 
