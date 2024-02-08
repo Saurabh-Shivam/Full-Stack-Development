@@ -4,7 +4,7 @@ import logo from "../assets/logo.jpg";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between w-[100%] h-24 p-4 bg-black m-0">
+    <div className="flex flex-col md:flex-row justify-between items-center w-full h-24 p-4 bg-black">
       {/* Logo */}
       <div>
         <Link to="/">
@@ -17,18 +17,18 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Navigation Links */}
-      <nav className="border-2 border-black mr-4 p-4 w-[30%]">
+      <nav className="mr-4 p-4 w-[30%]">
         <ul className="flex flex-wrap justify-evenly text-lg text-white">
-          <li className="hover:text-red-400 transition duration-300 ">
+          <li className="hover:text-red-400 transition duration-300">
             <NavLink to="/comics">Comics</NavLink>
           </li>
-          <li className="hover:text-red-400 transition duration-300 ">
+          <li className="hover:text-red-400 transition duration-300">
             <NavLink to="/series">Series</NavLink>
           </li>
-          <li className="hover:text-red-400 transition duration-300 ">
+          <li className="hover:text-red-400 transition duration-300">
             <NavLink to="/characters">Characters</NavLink>
           </li>
-          <li className="hover:text-red-400 transition duration-300 ">
+          <li className="hover:text-red-400 transition duration-300">
             <NavLink to="/events">Events</NavLink>
           </li>
           <li className="hover:text-red-400 transition duration-300">
