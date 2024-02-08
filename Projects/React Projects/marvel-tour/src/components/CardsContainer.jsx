@@ -1,18 +1,24 @@
 import React from "react";
 import Card from "./Card";
 
-const CardsContainer = ({ cardValue }) => {
+const CardsContainer = ({ cardValue, category }) => {
   // console.log("Inside cardsContainer");
   // console.log(cardValue);
-
-  // Shuffle the cardValue array randomly
-  const shuffledCards = cardValue.sort(() => Math.random() - 0.5);
-  // Slice the first 4 items from the shuffled array
-  const randomCards = shuffledCards.slice(0, 4);
+  let displayCards;
+  if (category) {
+    // Shuffle the cardValue array randomly
+    const shuffledCards = cardValue.sort(() => Math.random() - 0.5);
+    displayCards = shuffledCards;
+  } else {
+    // Shuffle the cardValue array randomly
+    const shuffledCards = cardValue.sort(() => Math.random() - 0.5);
+    // Slice the first 4 items from the shuffled array
+    displayCards = shuffledCards.slice(0, 4);
+  }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-      {randomCards.map((card, index) => (
+      {displayCards.map((card, index) => (
         <Card
           key={index}
           name={card?.name}

@@ -7,41 +7,21 @@ import Series from "./pages/Series";
 import Characters from "./pages/Characters";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
-// import { url } from "./data.js";
-// import { useEffect, useState } from "react";
 
 function App() {
-  // const [cardValue, setCardValue] = useState([]);
 
-  // const fetchData = async () => {
-  //   try {
-  //     const res = await fetch(url);
-  //     const jsonData = await res.json();
-  //     // Save data
-  //     setCardValue(jsonData.data.results);
-  //     console.log("Printing card value in app js file");
-  //     console.log(cardValue);
-  //     console.log("printing json data");
-  //     console.log(jsonData);
-  //   } catch (error) {
-  //     console.log("Data Not Found");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  let category = true;
 
   return (
     <div>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/comics" element={<Comics />} />
-        <Route path="/series" element={<Series />} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/" element={<Home category={!category} />} />
+        <Route path="/comics" element={<Comics category={category} />} />
+        <Route path="/series" element={<Series category={category} />} />
+        <Route path="/characters" element={<Characters category={category} />} />
+        <Route path="/events" element={<Events category={category} />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>

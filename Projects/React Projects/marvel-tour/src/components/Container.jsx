@@ -2,10 +2,24 @@ import React, { useEffect, useState } from "react";
 import CardsContainer from "./CardsContainer";
 import { useNavigate } from "react-router-dom";
 
-const Container = ({ type, title, apiUrl, pKey, hKey }) => {
+const Container = ({
+  type,
+  title,
+  apiUrl,
+  pKey,
+  hKey,
+  category,
+  name,
+  searchValue,
+}) => {
   const [cardValue, setCardValue] = useState([]);
+  let url;
 
-  const url = `${apiUrl}/${type}?ts=1&apikey=${pKey}&hash=${hKey}`;
+  if (searchValue) {
+    url = `${apiUrl}/${type}?ts=1&apikey=${pKey}&hash=${hKey}&name=${name}`;
+  } else {
+    url = `${apiUrl}/${type}?ts=1&apikey=${pKey}&hash=${hKey}`;
+  }
 
   const fetchData = async () => {
     try {
@@ -39,7 +53,7 @@ const Container = ({ type, title, apiUrl, pKey, hKey }) => {
         <h2>{title}</h2>
       </div>
       <div>
-        <CardsContainer cardValue={cardValue} />
+        <CardsContainer cardValue={cardValue} category={category} />
       </div>
       <div className="text-center">
         <button
