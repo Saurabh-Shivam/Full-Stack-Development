@@ -4,13 +4,7 @@ import { containerData, apiUrl, publicApiKey, hashKey } from "../containerData";
 
 const Home = ({ cardValue }) => {
   return (
-    //     <div>
-    //       {/* {containerData.map((item) => {
-    //         return <Container key={item.id} type={item.type} title={item.title} cardValue={apiUrl}/>;
-    //       })} */}
-    //       <Container cardValue={cardValue} />
-    //     </div>
-    <div>
+    <div className="mt-4 p-4 flex flex-wrap flex-col gap-20">
       {containerData.map((item) => (
         <Container
           key={item.id}

@@ -1,34 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CardsContainer from "./CardsContainer";
 
-// const Container = (props) => {
-//   let cardValue = props.cardValue;
-//   return (
-//     //   <div>
-//     //   <div>
-//     //     <h3>props.title</h3>
-//     //   </div>
-//     //   <div>
-//     //     <CardsContainer cardValue={props.cardValue} />
-//     //   </div>
-//     //   <div>
-//     //     <button>Explore</button>
-//     //   </div>
-//     // </div>
-
-//     <div>
-//       <div>
-//         <h3>Heading</h3>
-//       </div>
-//       <div>
-//         <CardsContainer cardValue={cardValue} />
-//       </div>
-//       <div>
-//         <button>Explore</button>
-//       </div>
-//     </div>
-//   );
-// };
 const Container = ({ type, title, apiUrl, pKey, hKey }) => {
   const [cardValue, setCardValue] = useState([]);
 
@@ -54,11 +26,11 @@ const Container = ({ type, title, apiUrl, pKey, hKey }) => {
   }, [url]);
 
   return (
-    <div>
-      <div>
+    <div className="flex flex-wrap flex-col gap-10 border-2 border-black p-4">
+      <div className="text-3xl font-black font-mono text-center">
         <h2>{title}</h2>
       </div>
-      <div>
+      <div className="border-2 border-red-800">
         <CardsContainer cardValue={cardValue} />
       </div>
       <div>

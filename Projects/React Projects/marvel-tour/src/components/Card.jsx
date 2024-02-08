@@ -13,15 +13,15 @@ const Card = (props) => {
   let comicLink = props.comicLink;
 
   return (
-    <div>
-      <div>
-        <img width={140} height={100} src={image} alt="img" />
+    <div className="border-2 border-black flex flex-wrap flex-col gap-2 w-[24%]">
+      <div className="w-[100%]">
+        <img src={image} alt="img" />
       </div>
-      <div>
+      <div className="flex flex-wrap justify-between px-2 text-base font-bold">
         <p>{name}</p>
-        <p>{id}</p>
+        <p>{`#${id}`}</p>
       </div>
-      <div>
+      <div className="px-2 text-sm border-2 border-red-700 w-60">
         <p>{desc}</p>
       </div>
       <div>
