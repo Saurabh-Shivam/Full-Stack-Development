@@ -19,20 +19,45 @@ const Navbar = () => {
       {/* Navigation Links */}
       <nav className="mr-4 p-4 w-[30%]">
         <ul className="flex flex-wrap justify-evenly text-lg text-white">
-          <li className="hover:text-red-400 transition duration-300">
-            <NavLink to="/comics">Comics</NavLink>
+          <li>
+            <NavLink
+              to="/comics"
+              className="hover:text-red-400 transition duration-300"
+            >
+              Comics
+            </NavLink>
           </li>
-          <li className="hover:text-red-400 transition duration-300">
-            <NavLink to="/series">Series</NavLink>
+          <li>
+            <NavLink
+              to="/series"
+              className="hover:text-red-400 transition duration-300"
+            >
+              Series
+            </NavLink>
           </li>
-          <li className="hover:text-red-400 transition duration-300">
-            <NavLink to="/characters">Characters</NavLink>
+          <li>
+            <NavLink
+              to="/characters"
+              className="hover:text-red-400 transition duration-300"
+            >
+              Characters
+            </NavLink>
           </li>
-          <li className="hover:text-red-400 transition duration-300">
-            <NavLink to="/events">Events</NavLink>
+          <li>
+            <NavLink
+              to="/events"
+              className="hover:text-red-400 transition duration-300"
+            >
+              Events
+            </NavLink>
           </li>
-          <li className="hover:text-red-400 transition duration-300">
-            <NavLink to="/contact">Contact</NavLink>
+          <li>
+            <NavLink
+              to="/contact"
+              className="hover:text-red-400 transition duration-300"
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </nav>

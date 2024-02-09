@@ -1,9 +1,11 @@
 import React from "react";
 import Card from "./Card";
 
-const CardsContainer = ({ cardValue, category }) => {
+const CardsContainer = ({ type, cardValue, category }) => {
   // console.log("Inside cardsContainer");
   // console.log(cardValue);
+  console.log("Inside cardsContainer for comics");
+  // console.log(cardValue[1]?.textObjects[0]?.text);
   let displayCards;
   if (category) {
     // Shuffle the cardValue array randomly
@@ -21,11 +23,19 @@ const CardsContainer = ({ cardValue, category }) => {
       {displayCards.map((card, index) => (
         <Card
           key={index}
-          name={card?.name}
+          name={card?.name ? card?.name : card?.title}
           id={card?.id}
           desc={
-            card?.description ? card?.description : "No description available"
+            card?.description
+              ? card?.description
+              : "No description available for now"
           }
+          // desc = {
+          //   card?.textObjects[0]?.text ?
+          //      card?.textObjects[0]?.text
+          //     : "No description available for now"
+          // }
+
           comics={card?.comics?.available}
           events={card?.events?.available}
           stories={card?.stories?.available}

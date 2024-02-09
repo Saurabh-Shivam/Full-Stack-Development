@@ -17,7 +17,7 @@ const Card = (props) => {
         <img className="w-full h-80 object-cover" src={image} alt="img" />
       </div>
       <div className="flex justify-between mx-2 text-base font-bold">
-        <p>{name}</p>
+        <p className="w-[100%]">{name}</p>
         <p>{`#${id}`}</p>
       </div>
       <div className="p-2">

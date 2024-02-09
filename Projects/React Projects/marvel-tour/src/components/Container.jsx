@@ -53,7 +53,7 @@ const Container = ({
         <h2>{title}</h2>
       </div>
       <div>
-        <CardsContainer cardValue={cardValue} category={category} />
+        <CardsContainer type = {type} cardValue={cardValue} category={category} />
       </div>
       <div className="text-center">
         <button
