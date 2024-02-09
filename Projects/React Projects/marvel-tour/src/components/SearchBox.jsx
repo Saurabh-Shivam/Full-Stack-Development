@@ -49,24 +49,44 @@ const SearchBox = ({
   //   fetchData();
   // }, [url]);
 
+  function refreshHandler() {
+    window.location.reload(true);
+  }
+
   return (
     <div>
-      <div>
-        <form onSubmit={submitHandler}>
-          <input
-            type="text"
-            placeholder="Enter Your Character Name"
-            value={inputValue}
-            name="charName"
-            onChange={changeHandler}
-          />
-          <button>Search</button>
+      <div className="flex justify-center mt-8">
+        <form
+          className=" shadow-md rounded-md p-4 w-[25%] flex flex-col gap-4 justify-center items-center "
+          onSubmit={submitHandler}
+        >
+          <div>
+            <input
+              className="border-1 rounded-md outline-red-700 w-80 p-2 font-mono"
+              type="text"
+              placeholder={`Enter Your ${type} Name...`}
+              value={inputValue}
+              name="charName"
+              onChange={changeHandler}
+            />
+          </div>
+          <div className="flex gap-12">
+            <button className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-400 hover:text-yellow-50  transition duration-300">
+              Search
+            </button>
+            <button
+              className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-400 hover:text-yellow-50  transition duration-300"
+              onClick={refreshHandler}
+            >
+              Refresh
+            </button>
+          </div>
         </form>
       </div>
 
       {/* cards container */}
       <Container
-        type="characters"
+        type={type}
         apiUrl={apiUrl} // Pass the apiUrl to Container
         pKey={publicApiKey}
         hKey={hashKey}
