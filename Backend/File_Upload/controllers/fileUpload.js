@@ -1,9 +1,9 @@
 const File = require("../models/File");
+const cloudinary = require("cloudinary").v2;
 
-// localFileUload -> handler function
+// local file upload handler function
 exports.localFileUpload = async (req, res) => {
   try {
-    
     // fetching file from request
     //  req.files.file -> here .file is the key name which we will be using in postman form-data section of body
     const file = req.files.file;
@@ -22,7 +22,7 @@ exports.localFileUpload = async (req, res) => {
       console.log(err);
     });
 
-    // create a successful response
+    // creating a successful response
     res.json({
       success: true,
       message: "Local File Uploaded Successfully",
@@ -30,5 +30,66 @@ exports.localFileUpload = async (req, res) => {
   } catch (error) {
     console.log("Not able to upload the file on server");
     console.log(error);
+  }
+};
+
+function isFileTypeSupported(type, supportedTypes) {
+  return supportedTypes.includes(type);
+}
+
+async function uploadFileToCloudinary(file, folder) {
+  const options = { folder };
+  console.log("Temp file path ->", file.tempFilePath);
+  return await cloudinary.uploader.upload(file.tempFilePath, options);
+}
+
+// image upload handler function
+exports.imageUpload = async (req, res) => {
+  try {
+    // fetching data
+    const { name, tags, email } = req.body;
+    console.log(name, tags, email);
+    const file = req.files.imageFile;
+    console.log(file);
+
+    // validation
+    const supportedTpyes = ["jpg", "jpeg", "png"];
+    const fileType = file.name.split(".")[1].toLowerCase();
+    console.log(fileType);
+
+    if (!isFileTypeSupported(fileType, supportedTpyes)) {
+      return res.status(400).json({
+        success: false,
+        message: "File format not supported",
+      });
+    }
+
+    // if file format is supported
+    console.log(
+      "Uploading to cloudinary folder I created -> FileUploader_Project"
+    );
+    const response = await uploadFileToCloudinary(file, "FileUploader_Project");
+    console.log(response);
+
+    // making db entry
+    const fileData = await File.create({
+      name,
+      tags,
+      email,
+      imageUrl: response.secure_url,
+    });
+
+    // create a successful response
+    res.json({
+      success: true,
+      imageUrl: response.secure_url,
+      message: "Image Successfully Uploaded",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong",
+    });
   }
 };
