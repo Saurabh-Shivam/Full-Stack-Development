@@ -37,9 +37,12 @@ function isFileTypeSupported(type, supportedTypes) {
   return supportedTypes.includes(type);
 }
 
+// function to upload on cloudinary ->> from cloudinary documentation
 async function uploadFileToCloudinary(file, folder) {
   const options = { folder };
   console.log("Temp file path ->", file.tempFilePath);
+  // automatically detect the file type
+  options.resource_type = "auto";
   return await cloudinary.uploader.upload(file.tempFilePath, options);
 }
 
@@ -56,7 +59,7 @@ exports.imageUpload = async (req, res) => {
     const supportedTpyes = ["jpg", "jpeg", "png"];
     const fileType = file.name.split(".")[1].toLowerCase();
     console.log(fileType);
-
+    // TODO: add a upper limit image
     if (!isFileTypeSupported(fileType, supportedTpyes)) {
       return res.status(400).json({
         success: false,
@@ -64,7 +67,57 @@ exports.imageUpload = async (req, res) => {
       });
     }
 
-    // if file format is supported
+    // if file format is supported upload on cloudinary
+    console.log(
+      "Uploading to cloudinary folder I created -> FileUploader_Project"
+    );
+    const response = await uploadFileToCloudinary(file, "FileUploader_Project");
+    console.log(response);
+
+    // making db entry
+    const fileData = await File.create({
+      name,
+      tags,
+      email,
+      imageUrl: response.secure_url,
+    });
+
+    // create a successful response
+    res.json({
+      success: true,
+      imageUrl: response.secure_url,
+      message: "Image Successfully Uploaded",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong",
+    });
+  }
+};
+
+// video upload handler function
+exports.videoUpload = async (req, res) => {
+  try {
+    // fetching data
+    const { name, tags, email } = req.body;
+    console.log(name, tags, email);
+    const file = req.files.videoFile;
+    console.log(file);
+
+    // validation
+    const supportedTpyes = ["mp4", "mov"];
+    const fileType = file.name.split(".")[1].toLowerCase();
+    console.log(fileType);
+    // TODO: add a upper limit of 5MB for video
+    if (!isFileTypeSupported(fileType, supportedTpyes)) {
+      return res.status(400).json({
+        success: false,
+        message: "File format not supported",
+      });
+    }
+    // if file format is supported upload on cloudinary
     console.log(
       "Uploading to cloudinary folder I created -> FileUploader_Project"
     );
