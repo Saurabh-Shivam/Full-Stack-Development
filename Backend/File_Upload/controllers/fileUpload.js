@@ -38,9 +38,13 @@ function isFileTypeSupported(type, supportedTypes) {
 }
 
 // function to upload on cloudinary ->> from cloudinary documentation
-async function uploadFileToCloudinary(file, folder) {
+async function uploadFileToCloudinary(file, folder, quality) {
   const options = { folder };
   console.log("Temp file path ->", file.tempFilePath);
+
+  if (quality) {
+    options.quality = quality;
+  }
   // automatically detect the file type
   options.resource_type = "auto";
   return await cloudinary.uploader.upload(file.tempFilePath, options);
@@ -56,11 +60,11 @@ exports.imageUpload = async (req, res) => {
     console.log(file);
 
     // validation
-    const supportedTpyes = ["jpg", "jpeg", "png"];
+    const supportedTypes = ["jpg", "jpeg", "png"];
     const fileType = file.name.split(".")[1].toLowerCase();
     console.log(fileType);
     // TODO: add a upper limit image
-    if (!isFileTypeSupported(fileType, supportedTpyes)) {
+    if (!isFileTypeSupported(fileType, supportedTypes)) {
       return res.status(400).json({
         success: false,
         message: "File format not supported",
@@ -107,11 +111,11 @@ exports.videoUpload = async (req, res) => {
     console.log(file);
 
     // validation
-    const supportedTpyes = ["mp4", "mov"];
+    const supportedTypes = ["mp4", "mov"];
     const fileType = file.name.split(".")[1].toLowerCase();
     console.log(fileType);
     // TODO: add a upper limit of 5MB for video
-    if (!isFileTypeSupported(fileType, supportedTpyes)) {
+    if (!isFileTypeSupported(fileType, supportedTypes)) {
       return res.status(400).json({
         success: false,
         message: "File format not supported",
@@ -122,6 +126,62 @@ exports.videoUpload = async (req, res) => {
       "Uploading to cloudinary folder I created -> FileUploader_Project"
     );
     const response = await uploadFileToCloudinary(file, "FileUploader_Project");
+    console.log(response);
+
+    // making db entry
+    const fileData = await File.create({
+      name,
+      tags,
+      email,
+      imageUrl: response.secure_url,
+    });
+
+    // create a successful response
+    res.json({
+      success: true,
+      imageUrl: response.secure_url,
+      message: "Image Successfully Uploaded",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong",
+    });
+  }
+};
+
+// image size reducer handler function
+exports.imageSizeReducer = async (req, res) => {
+  try {
+    // fetching data
+    const { name, tags, email } = req.body;
+    console.log(name, tags, email);
+    const file = req.files.imageFile;
+    console.log(file);
+
+    // validation
+    const supportedTypes = ["jpg", "jpeg", "png"];
+    const fileType = file.name.split(".")[1].toLowerCase();
+    console.log(fileType);
+
+    if (!isFileTypeSupported(fileType, supportedTypes)) {
+      return res.status(400).json({
+        success: false,
+        message: "File format not supported",
+      });
+    }
+    // if file format is supported upload on cloudinary
+    console.log(
+      "Uploading to cloudinary folder I created -> FileUploader_Project"
+    );
+    // here the third parameter 30 which we are passing is the quality of image
+    // TODO: Compress using height instead of quality
+    const response = await uploadFileToCloudinary(
+      file,
+      "FileUploader_Project",
+      30
+    );
     console.log(response);
 
     // making db entry
